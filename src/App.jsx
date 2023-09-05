@@ -4,6 +4,7 @@ import loadingGif from "./assets/loading.gif";
 import "./App.css";
 
 
+
 export default function App() {
   const [prompt, updatePrompt] = useState(undefined);
   const [loading, setLoading] = useState(false);
