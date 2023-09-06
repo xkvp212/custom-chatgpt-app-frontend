@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import lens from "./assets/lens.png";
 import loadingGif from "./assets/loading.gif";
 import "./App.css";
@@ -11,10 +11,10 @@ export default function App() {
   const [answer, setAnswer] = useState(undefined);
 
   useEffect(() => {
-    if(prompt != null && prompt.trim() === "") {
-      setAnswer(underfined);
+    if (prompt != null && prompt.trim() === "") {
+      setAnswer(undefined);
     }
-  }, [prompt]); 
+  }, [prompt]);
   const sendPrompt = async (event) => {
     if (event.key !== "Enter") {
       return;
