@@ -10,6 +10,11 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [answer, setAnswer] = useState(undefined);
 
+  useEffect(() => {
+    if(prompt != null && prompt.trim() === "") {
+      setAnswer(underfined);
+    }
+  }, [prompt]); 
   const sendPrompt = async (event) => {
     if (event.key !== "Enter") {
       return;
