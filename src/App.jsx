@@ -24,9 +24,12 @@ export default function App() {
 
       const requestOptions = {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.API_KEY}`,
+        },
         body: JSON.stringify({prompt}),
-      }
+      };
       const res = await fetch("/api/ask", requestOptions);
 
       if (!res.ok){
